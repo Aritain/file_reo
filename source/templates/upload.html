@@ -1,0 +1,18 @@
+<html>
+   <body>
+    {{ upload_result }}
+	<form enctype="multipart/form-data" method="post">
+		<p>
+			Provide directory name:<br>
+			<input type="text" name="directory_field" size="50">
+		</p>
+		<p>
+			Upload a file:<br>
+			<input type="file" name="upload_file" size="50">
+		</p>
+		<div>
+			<input type="submit" value="Send">
+		</div>
+	</form>
+   </body>
+</html>
