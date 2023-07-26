@@ -16,6 +16,11 @@ try:
 except KeyError:
     SERVER_PAIR = None
 
+try:
+    ALLOWED_CHARS = os.environ['ALLOWED_CHARS']
+except KeyError:
+    ALLOWED_CHARS = '^[a-zA-Z0-9\-\_\.]+$'
+
 
 LISTEN_PORT = 80
 PARENT_DIRECTORY = '/data'
@@ -48,8 +53,7 @@ EMPTY_FILE_MESSAGE = f"""
 
 
 def parse_names(name):
-    allowed_chars = '^[a-zA-Z0-9\-\_\.]+$'
-    if re.search(allowed_chars, name):
+    if re.search(ALLOWED_CHARS, name):
         return True
     else:
         return False
